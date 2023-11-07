@@ -49,6 +49,21 @@ public class Land : MonoBehaviour
 
     public void Interact()
     {
-        SwitchLandStatus(LandStatus.Farmland);
+        ItemData toolslot = InventoryManager.Instance.equippedTool;
+        EquipmentData equipmentTool = toolslot as EquipmentData;
+
+        if(equipmentTool != null)
+        {
+            EquipmentData.ToolType toolType = equipmentTool.toolType;
+            switch (toolType) 
+            {
+                case EquipmentData.ToolType.hoe:
+                    SwitchLandStatus(LandStatus.Farmland);
+                    break;
+                case EquipmentData.ToolType.wateringCan:
+                    SwitchLandStatus(LandStatus.Watered);
+                    break;
+            }
+        }
     }
 }
