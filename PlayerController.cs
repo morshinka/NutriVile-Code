@@ -93,7 +93,7 @@ public class PlayerController : MonoBehaviour
             controller.Move(velocity);
         }
 
-        // 11. digunakan untuk dengan mengatur nilai parameter "Speed" pada animator objek berdasarkan kecepatan yang diberikan.
+        // 11. digunakan untuk dengan mengatur nilai parameter "Speed" pada animator objek berdasarkan kecepatan yang diberikan. 
         animator.SetFloat("Speed", velocity.magnitude);
     }
 }
